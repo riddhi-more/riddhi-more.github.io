@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Riddhi More - AI Engineer Portfolio</title>
+    <title>Riddhi More - AI & Machine Learning Engineer</title>
+    <meta name="description" content="Microsoft AI-certified AI Engineer with 10+ years in ML engineering and production-grade GenAI solutions. Expert in RAG, Agentic AI, and Azure OpenAI.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -129,18 +130,36 @@
         .hero h1 {
             font-size: clamp(3rem, 8vw, 6rem);
             color: var(--primary);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             opacity: 0;
             animation: fadeInUp 0.8s ease 0.2s forwards;
         }
 
+        .hero-role {
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.3s forwards;
+            font-family: 'Crimson Pro', serif;
+        }
+
         .hero-subtitle {
-            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            font-size: clamp(1.1rem, 2.2vw, 1.3rem);
             color: var(--text-light);
-            max-width: 700px;
+            max-width: 750px;
             margin-bottom: 3rem;
             opacity: 0;
             animation: fadeInUp 0.8s ease 0.4s forwards;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.6s forwards;
         }
 
         .cta-button {
@@ -152,14 +171,23 @@
             border-radius: 2px;
             transition: all 0.3s ease;
             font-weight: 500;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease 0.6s forwards;
         }
 
         .cta-button:hover {
             background: var(--secondary);
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(10, 37, 64, 0.2);
+        }
+
+        .cta-button-secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .cta-button-secondary:hover {
+            background: var(--primary);
+            color: var(--white);
         }
 
         /* Sections */
@@ -194,10 +222,8 @@
 
         /* About Section */
         .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
-            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .about-text p {
@@ -206,25 +232,76 @@
             line-height: 1.8;
         }
 
-        .about-image {
-            position: relative;
+        .about-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
 
-        .about-image::before {
-            content: '';
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            right: 20px;
-            bottom: 20px;
-            border: 2px solid var(--accent);
-            z-index: -1;
+        .highlight-item {
+            padding: 1.5rem;
+            background: white;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
+        .highlight-item h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .highlight-item p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* Expertise Section */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .expertise-card {
+            padding: 2.5rem;
+            background: white;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .expertise-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .expertise-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .expertise-list {
+            list-style: none;
+            color: var(--text-light);
+        }
+
+        .expertise-list li {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .expertise-list li:last-child {
+            border-bottom: none;
         }
 
         /* Projects Section */
@@ -262,6 +339,13 @@
             order: 2;
         }
 
+        .project-number {
+            font-family: 'Crimson Pro', serif;
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
         .project-info h3 {
             font-size: 2rem;
             color: var(--primary);
@@ -288,6 +372,30 @@
             color: var(--text-light);
             margin-bottom: 1.5rem;
             line-height: 1.8;
+        }
+
+        .project-metrics {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .metric {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            font-family: 'Crimson Pro', serif;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--text-light);
         }
 
         .project-link {
@@ -317,34 +425,42 @@
             overflow: hidden;
         }
 
-        /* Skills Section */
-        .skills-grid {
+        /* Certifications Section */
+        .certifications-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
-        .skill-category h3 {
-            font-size: 1.5rem;
+        .cert-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .cert-card h4 {
             color: var(--primary);
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.8rem;
-            border-bottom: 2px solid var(--accent);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
         }
 
-        .skill-list {
-            list-style: none;
+        .cert-code {
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
         }
 
-        .skill-list li {
-            padding: 0.8rem 0;
+        .cert-issuer {
             color: var(--text-light);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .skill-list li:last-child {
-            border-bottom: none;
+            font-size: 0.95rem;
         }
 
         /* Contact Section */
@@ -361,7 +477,7 @@
 
         .contact-content p {
             font-size: 1.2rem;
-            color: var(--text-light);
+            cdocsolor: var(--text-light);
             margin-bottom: 3rem;
         }
 
@@ -414,11 +530,6 @@
                 gap: 1.5rem;
             }
 
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
             .project-card,
             .project-card:nth-child(even) {
                 grid-template-columns: 1fr;
@@ -427,10 +538,6 @@
 
             .project-card:nth-child(even) .project-info {
                 order: 1;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
             }
         }
 
@@ -445,6 +552,14 @@
 
             section {
                 padding: 4rem 5%;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-button {
+                text-align: center;
             }
 
             .contact-links {
@@ -478,8 +593,8 @@
             <a href="#" class="logo">RM</a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#projects">Work</a></li>
-                <li><a href="#skills">Skills</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -489,10 +604,28 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-label">AI Engineer • London, UK</div>
+            <div class="hero-label">AI & ML Engineer • London, UK</div>
             <h1>Riddhi More</h1>
-            <p class="hero-subtitle">Microsoft AI-certified AI Engineer with 9+ years specializing in deep learning models for sequential data using LSTMs and transformers. Expert in leading model development, technical direction, and deploying production ML systems.</p>
-            <a href="#projects" class="cta-button">View My Work</a>
+            <p class="hero-role">Artificial Intelligence Engineer | Machine Learning Engineer</p>
+            <p class="hero-subtitle">Microsoft AI-certified engineer with 10+ years in ML engineering and production-grade GenAI solutions. Proven expertise in RAG architectures, Agentic AI, and deploying scalable AI-driven products using Python, Azure AI stack, and Azure OpenAI API.</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="cta-button">View My Work</a>
+                <a href="#contact" class="cta-button cta-button-secondary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section style="padding: 4rem 5% 2rem 5%; text-align: center; background: linear-gradient(135deg, rgba(10, 37, 64, 0.03), rgba(212, 165, 116, 0.05));">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <h2 style="font-family: 'Crimson Pro', serif; font-size: clamp(2.5rem, 5vw, 4rem); color: var(--primary); margin-bottom: 1rem;">Riddhi More</h2>
+            <p style="font-size: clamp(1.2rem, 2vw, 1.5rem); color: var(--secondary); margin-bottom: 1.5rem; font-family: 'Crimson Pro', serif;">Artificial Intelligence (AI) Engineer | Machine Learning Engineer</p>
+            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; color: var(--text-light); font-size: 1rem; margin-bottom: 0.5rem;">
+                <a href="mailto:riddhimore.ai@gmail.com" style="color: var(--text-light); text-decoration: none; transition: color 0.3s ease;">riddhimore.ai@gmail.com</a>
+                <span style="color: var(--accent);">|</span>
+                <a href="https://www.linkedin.com/in/riddhimor/" target="_blank" style="color: var(--text-light); text-decoration: none; transition: color 0.3s ease;">linkedin.com/in/riddhimor</a>
+            </div>
+            <p style="color: var(--text-light); font-size: 1rem;">London, United Kingdom</p>
         </div>
     </section>
 
@@ -504,15 +637,83 @@
         </div>
         <div class="about-content">
             <div class="about-text reveal">
-                <p>I'm a Microsoft AI-certified AI Engineer with over 9 years of experience in software development and deploying deep learning models for sequential data, including time series and natural language processing.</p>
-                <p>Currently at Morgan Stanley, I lead the development of proprietary deep learning models using transformers and LSTMs for sequential time series trading data, achieving 40-45% reduction in production incidents. I've driven models from R&D prototypes through to production deployment while mentoring engineering teams and establishing best practices.</p>
-                <p>My expertise spans the full ML lifecycle—from model architecture design and training to production deployment using PyTorch, TensorFlow, and cloud platforms. I combine strong technical skills with business acumen to deliver solutions that drive measurable impact.</p>
-                <p>I hold a Master's degree in Software Engineering (Cloud Computing) from City, University of London, and multiple Microsoft AI certifications.</p>
-            </div>
-            <div class="about-image reveal">
-                <div style="width: 100%; height: 500px; background: linear-gradient(135deg, var(--secondary), var(--primary)); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
-                    Your Photo
+                <p>I'm a Microsoft AI-certified engineer with over a decade of experience building production-grade AI and machine learning solutions. My work focuses on designing and deploying GenAI systems, RAG architectures, and agentic workflows that solve complex real-world problems.</p>
+                <p>Currently at Morgan Stanley, I design and deploy machine learning models and algorithmic solutions for high-volume trading data, achieving 40-45% reduction in incidents while collaborating with cross-functional teams to translate requirements into scalable AI implementations.</p>
+                <p>I specialize in the complete ML lifecycle—from concept and architecture design through to production deployment and monitoring. My technical expertise spans PyTorch, Azure AI, LangChain, and distributed systems, combined with strong engineering practices and cross-functional collaboration skills.</p>
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <h4>10+ Years</h4>
+                        <p>ML & Software Engineering Experience</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>40-45%</h4>
+                        <p>Incident Reduction at Scale</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Azure & AWS</h4>
+                        <p>Cloud-Native Deployments</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>RAG & Agentic AI</h4>
+                        <p>Advanced GenAI Solutions</p>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise">
+        <div class="section-header reveal">
+            <div class="section-number">02</div>
+            <h2 class="section-title">Core Expertise</h2>
+            <p class="section-description">Comprehensive skills across ML engineering, GenAI, and production deployment.</p>
+        </div>
+        <div class="expertise-grid">
+            <div class="expertise-card reveal">
+                <div class="expertise-icon">🤖</div>
+                <h3>ML & GenAI</h3>
+                <ul class="expertise-list">
+                    <li>LLM fine-tuning & evaluation</li>
+                    <li>RAG pipelines</li>
+                    <li>Agentic workflows</li>
+                    <li>NLP & embeddings</li>
+                    <li>Graph-based retrieval</li>
+                    <li>Model optimization</li>
+                </ul>
+            </div>
+            <div class="expertise-card reveal">
+                <div class="expertise-icon">🛠️</div>
+                <h3>Tools & Frameworks</h3>
+                <ul class="expertise-list">
+                    <li>Python (Production-grade)</li>
+                    <li>PyTorch</li>
+                    <li>Hugging Face</li>
+                    <li>Scikit-learn & spaCy</li>
+                    <li>LangChain & LlamaIndex</li>
+                </ul>
+            </div>
+            <div class="expertise-card reveal">
+                <div class="expertise-icon">☁️</div>
+                <h3>Deployment & Infrastructure</h3>
+                <ul class="expertise-list">
+                    <li>Kubernetes & Docker</li>
+                    <li>CI/CD pipelines</li>
+                    <li>Azure AI & AWS</li>
+                    <li>PostgreSQL & Elasticsearch</li>
+                    <li>Distributed systems</li>
+                </ul>
+            </div>
+            <div class="expertise-card reveal">
+                <div class="expertise-icon">⚙️</div>
+                <h3>Engineering Practices</h3>
+                <ul class="expertise-list">
+                    <li>Algorithmic optimization</li>
+                    <li>Monitoring & observability</li>
+                    <li>Cross-functional delivery</li>
+                    <li>Agile/Scrum</li>
+                    <li>SRE & ITSM practices</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -520,21 +721,36 @@
     <!-- Projects Section -->
     <section id="projects">
         <div class="section-header reveal">
-            <div class="section-number">02</div>
-            <h2 class="section-title">Selected Work</h2>
-            <p class="section-description">A collection of projects that showcase my skills in development, design, and problem-solving.</p>
+            <div class="section-number">03</div>
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-description">Impactful AI solutions delivering measurable business value.</p>
         </div>
         <div class="projects-grid">
             <div class="project-card">
                 <div class="project-info">
-                    <h3>Deep Learning Models for Trading Data</h3>
+                    <div class="project-number">Project 01</div>
+                    <h3>ML Models for Trading Data</h3>
                     <div class="project-tags">
-                        <span class="tag">PyTorch</span>
-                        <span class="tag">Transformers</span>
-                        <span class="tag">LSTMs</span>
-                        <span class="tag">Time Series</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">RAG Pipelines</span>
+                        <span class="tag">Forecasting</span>
+                        <span class="tag">MLOps</span>
                     </div>
-                    <p class="project-description">Led development of proprietary deep learning models for sequential time series trading data at Morgan Stanley. Achieved 40-45% reduction in production incidents and 80-90% prediction accuracy across 120+ multi-modal financial datasets. Drove models from R&D prototypes through to production deployment.</p>
+                    <p class="project-description">Designed and deployed machine learning models and algorithmic solutions for high-volume trading data at Morgan Stanley. Built and optimized RAG-style retrieval and forecasting pipelines, implementing comprehensive model evaluation and monitoring aligned with MLOps best practices.</p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">40-45%</div>
+                            <div class="metric-label">Incident Reduction</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">80-90%</div>
+                            <div class="metric-label">Prediction Accuracy</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">120+</div>
+                            <div class="metric-label">Entities Covered</div>
+                        </div>
+                    </div>
                     <a href="#contact" class="project-link">Learn More →</a>
                 </div>
                 <div class="project-image">📈</div>
@@ -542,14 +758,37 @@
 
             <div class="project-card">
                 <div class="project-info">
-                    <h3>Product Price Prediction & Sales Forecasting</h3>
+                    <div class="project-number">Project 02</div>
+                    <h3>Azure AI Solutions & Automation</h3>
+                    <div class="project-tags">
+                        <span class="tag">Azure AI</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">ML Pipelines</span>
+                        <span class="tag">Automation</span>
+                    </div>
+                    <p class="project-description">Developed AI products and ML solutions on Azure at Capgemini, implementing backend services, data pipelines, and production deployment infrastructure. Collaborated with product managers to design and ship user-facing ML capabilities from concept to production.</p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">$2M+</div>
+                            <div class="metric-label">Cost Savings</div>
+                        </div>
+                    </div>
+                    <a href="#contact" class="project-link">Learn More →</a>
+                </div>
+                <div class="project-image">💼</div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-info">
+                    <div class="project-number">Project 03</div>
+                    <h3>Product Price Prediction & Agentic Commerce</h3>
                     <div class="project-tags">
                         <span class="tag">ANN</span>
                         <span class="tag">PySpark</span>
-                        <span class="tag">ML Pipelines</span>
                         <span class="tag">Agentic AI</span>
+                        <span class="tag">ML Pipelines</span>
                     </div>
-                    <p class="project-description">Built ANN-based predictive models to forecast product prices and sales timelines at City University. Integrated agentic commerce AI to simulate dynamic pricing strategies. Processed large datasets using PySpark and delivered reproducible ML pipelines aligned with industry best practices.</p>
+                    <p class="project-description">Built ANN-based predictive models to forecast product prices and sales timelines at City University. Integrated agentic commerce AI to simulate dynamic pricing strategies and optimize product recommendations. Processed large datasets using PySpark and delivered reproducible ML pipelines.</p>
                     <a href="https://github.com/riddhi-more" class="project-link">View on GitHub →</a>
                 </div>
                 <div class="project-image">🤖</div>
@@ -557,6 +796,7 @@
 
             <div class="project-card">
                 <div class="project-info">
+                    <div class="project-number">Project 04</div>
                     <h3>City Cloud – AWS ML Platform</h3>
                     <div class="project-tags">
                         <span class="tag">AWS</span>
@@ -572,56 +812,6 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="section-header reveal">
-            <div class="section-number">03</div>
-            <h2 class="section-title">Skills & Expertise</h2>
-        </div>
-        <div class="skills-grid">
-            <div class="skill-category reveal">
-                <h3>Deep Learning & AI</h3>
-                <ul class="skill-list">
-                    <li>LSTMs & Transformers</li>
-                    <li>Sequential Data Modeling</li>
-                    <li>Multi-modal Data</li>
-                    <li>Pre-training & Fine-tuning</li>
-                    <li>NLP & Embeddings</li>
-                </ul>
-            </div>
-            <div class="skill-category reveal">
-                <h3>Frameworks & Tools</h3>
-                <ul class="skill-list">
-                    <li>PyTorch & TensorFlow</li>
-                    <li>Hugging Face Transformers</li>
-                    <li>LangChain & LlamaIndex</li>
-                    <li>Scikit-learn & spaCy</li>
-                    <li>PySpark</li>
-                </ul>
-            </div>
-            <div class="skill-category reveal">
-                <h3>Engineering & Cloud</h3>
-                <ul class="skill-list">
-                    <li>Python (Production-grade)</li>
-                    <li>AWS & Azure</li>
-                    <li>Kubernetes & Docker</li>
-                    <li>CI/CD Pipelines</li>
-                    <li>PostgreSQL & Elasticsearch</li>
-                </ul>
-            </div>
-            <div class="skill-category reveal">
-                <h3>Leadership & Strategy</h3>
-                <ul class="skill-list">
-                    <li>Technical Direction</li>
-                    <li>Roadmap Ownership</li>
-                    <li>Team Mentoring</li>
-                    <li>Cross-functional Collaboration</li>
-                    <li>Stakeholder Management</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
     <!-- Certifications Section -->
     <section id="certifications" style="background: linear-gradient(135deg, rgba(10, 37, 64, 0.03), rgba(212, 165, 116, 0.05)); padding: 6rem 5%;">
         <div style="max-width: 1400px; margin: 0 auto;">
@@ -630,36 +820,36 @@
                 <h2 class="section-title">Certifications</h2>
                 <p class="section-description">Professional certifications demonstrating expertise in AI, cloud computing, and software engineering.</p>
             </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
-                <div class="reveal" style="background: white; padding: 2rem; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-                    <h4 style="color: var(--primary); margin-bottom: 0.5rem; font-size: 1.1rem;">Microsoft AI Engineer</h4>
-                    <p style="color: var(--accent); font-size: 0.9rem; margin-bottom: 0.5rem;">AI-102</p>
-                    <p style="color: var(--text-light); font-size: 0.95rem;">Microsoft</p>
+            <div class="certifications-grid">
+                <div class="cert-card reveal">
+                    <h4>Microsoft AI Engineer</h4>
+                    <p class="cert-code">AI-102</p>
+                    <p class="cert-issuer">Microsoft</p>
                 </div>
-                <div class="reveal" style="background: white; padding: 2rem; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-                    <h4 style="color: var(--primary); margin-bottom: 0.5rem; font-size: 1.1rem;">AI Fundamentals</h4>
-                    <p style="color: var(--accent); font-size: 0.9rem; margin-bottom: 0.5rem;">AI-900</p>
-                    <p style="color: var(--text-light); font-size: 0.95rem;">Microsoft</p>
+                <div class="cert-card reveal">
+                    <h4>AI Fundamentals</h4>
+                    <p class="cert-code">AI-900</p>
+                    <p class="cert-issuer">Microsoft</p>
                 </div>
-                <div class="reveal" style="background: white; padding: 2rem; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-                    <h4 style="color: var(--primary); margin-bottom: 0.5rem; font-size: 1.1rem;">Azure Fundamentals</h4>
-                    <p style="color: var(--accent); font-size: 0.9rem; margin-bottom: 0.5rem;">AZ-900</p>
-                    <p style="color: var(--text-light); font-size: 0.95rem;">Microsoft</p>
+                <div class="cert-card reveal">
+                    <h4>Azure Fundamentals</h4>
+                    <p class="cert-code">AZ-900</p>
+                    <p class="cert-issuer">Microsoft</p>
                 </div>
-                <div class="reveal" style="background: white; padding: 2rem; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-                    <h4 style="color: var(--primary); margin-bottom: 0.5rem; font-size: 1.1rem;">SRE Foundation</h4>
-                    <p style="color: var(--accent); font-size: 0.9rem; margin-bottom: 0.5rem;">Site Reliability Engineering</p>
-                    <p style="color: var(--text-light); font-size: 0.95rem;">DevOps Institute</p>
+                <div class="cert-card reveal">
+                    <h4>SRE Foundation</h4>
+                    <p class="cert-code">Site Reliability Engineering</p>
+                    <p class="cert-issuer">DevOps Institute</p>
                 </div>
-                <div class="reveal" style="background: white; padding: 2rem; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-                    <h4 style="color: var(--primary); margin-bottom: 0.5rem; font-size: 1.1rem;">ICAgile Foundation</h4>
-                    <p style="color: var(--accent); font-size: 0.9rem; margin-bottom: 0.5rem;">Agile Certification</p>
-                    <p style="color: var(--text-light); font-size: 0.95rem;">ICAgile</p>
+                <div class="cert-card reveal">
+                    <h4>ICAgile Foundation</h4>
+                    <p class="cert-code">Agile Certification</p>
+                    <p class="cert-issuer">ICAgile</p>
                 </div>
-                <div class="reveal" style="background: white; padding: 2rem; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-                    <h4 style="color: var(--primary); margin-bottom: 0.5rem; font-size: 1.1rem;">ITIL Certification</h4>
-                    <p style="color: var(--accent); font-size: 0.9rem; margin-bottom: 0.5rem;">IT Service Management</p>
-                    <p style="color: var(--text-light); font-size: 0.95rem;">Axelos</p>
+                <div class="cert-card reveal">
+                    <h4>ITIL Certification</h4>
+                    <p class="cert-code">IT Service Management</p>
+                    <p class="cert-issuer">Axelos</p>
                 </div>
             </div>
         </div>
@@ -669,18 +859,24 @@
     <section id="contact">
         <div class="contact-content reveal">
             <h2>Let's Connect</h2>
-            <p>I'm always interested in discussing new opportunities, AI projects, or collaborations. Whether you have a question about my work or want to explore how we can work together, feel free to reach out!</p>
+            <p>I'm always interested in discussing AI/ML opportunities, GenAI projects, or potential collaborations. Whether you have questions about my work or want to explore how we can work together, feel free to reach out!</p>
             <div class="contact-links">
                 <a href="mailto:riddhimore.ai@gmail.com" class="contact-link">Email Me</a>
                 <a href="https://github.com/riddhi-more" class="contact-link" target="_blank">GitHub</a>
                 <a href="https://www.linkedin.com/in/riddhimor/" class="contact-link" target="_blank">LinkedIn</a>
             </div>
+            <p style="margin-top: 3rem; font-size: 1.1rem; color: var(--text-light);">
+                Want a copy of my latest CV? 
+                <a href="https://docs.google.com/document/d/1TM151AUSJ7MuW9EJNYIuGya4EyDQn92S/edit?usp=sharing&ouid=106802314749228180648&rtpof=true&sd=true" 
+                   target="_blank" 
+                   style="color: var(--primary); font-weight: 600; text-decoration: underline; transition: color 0.3s ease;">Download here</a>
+            </p>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Riddhi More. AI Engineer based in London, UK.</p>
+        <p>&copy; 2026 Riddhi More • AI & ML Engineer • London, UK</p>
     </footer>
 
     <script>
